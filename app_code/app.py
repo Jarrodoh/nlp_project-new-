@@ -204,7 +204,7 @@ def get_bg_css():
 CUSTOM_CSS = """
 <style>
 /* Modern font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root{
   --text: #e5e7eb;
@@ -215,7 +215,7 @@ CUSTOM_CSS = """
   --accent: #38bdf8;
 }
 
-* { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+* { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
 
 /* Remove Streamlit top padding + default chrome */
 div[data-testid="stAppViewContainer"] { padding-top: 0rem; }
@@ -242,7 +242,7 @@ footer { visibility: hidden; }
     flex: 1;
     justify-content: center;
     color: #94a3b8;
-    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: 1.1rem;
     font-weight: 600;
     padding: 0.8rem 1.5rem;
@@ -542,15 +542,10 @@ section[data-testid="stSidebar"] {
 .hero::before{
   background:
     radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.85), transparent 60%),
-    radial-gradient(1px 1px at 28% 36%, rgba(255,255,255,0.75), transparent 60%),
     radial-gradient(1px 1px at 44% 22%, rgba(255,255,255,0.65), transparent 60%),
-    radial-gradient(1px 1px at 66% 28%, rgba(255,255,255,0.80), transparent 60%),
     radial-gradient(1px 1px at 78% 42%, rgba(255,255,255,0.70), transparent 60%),
-    radial-gradient(1px 1px at 86% 18%, rgba(255,255,255,0.60), transparent 60%),
     radial-gradient(1px 1px at 18% 62%, rgba(255,255,255,0.70), transparent 60%),
-    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.60), transparent 60%),
     radial-gradient(1px 1px at 58% 76%, rgba(255,255,255,0.78), transparent 60%),
-    radial-gradient(1px 1px at 74% 64%, rgba(255,255,255,0.62), transparent 60%),
     radial-gradient(1px 1px at 90% 74%, rgba(255,255,255,0.72), transparent 60%);
   animation: twinkle1 3.8s ease-in-out infinite;
 }
@@ -559,11 +554,8 @@ section[data-testid="stSidebar"] {
 .hero::after{
   background:
     radial-gradient(2px 2px at 22% 26%, rgba(255,255,255,0.75), transparent 65%),
-    radial-gradient(2px 2px at 52% 16%, rgba(255,255,255,0.65), transparent 65%),
     radial-gradient(2px 2px at 72% 24%, rgba(255,255,255,0.70), transparent 65%),
-    radial-gradient(2px 2px at 84% 54%, rgba(255,255,255,0.60), transparent 65%),
-    radial-gradient(2px 2px at 36% 56%, rgba(255,255,255,0.62), transparent 65%),
-    radial-gradient(2px 2px at 62% 74%, rgba(255,255,255,0.68), transparent 65%);
+    radial-gradient(2px 2px at 36% 56%, rgba(255,255,255,0.62), transparent 65%);
   opacity: 0.35;
   animation: twinkle2 5.6s ease-in-out infinite;
 }
@@ -582,25 +574,15 @@ section[data-testid="stSidebar"] {
 }
 
 .spark-1{ top:12%; left:8%;  animation: sparkle 3.2s 0.0s ease-in-out infinite; }
-.spark-2{ top:22%; left:25%; animation: sparkle 4.0s 0.6s ease-in-out infinite; }
-.spark-3{ top:8%;  left:42%; animation: sparkle 3.6s 1.2s ease-in-out infinite; }
-.spark-4{ top:18%; left:60%; animation: sparkle 4.4s 0.3s ease-in-out infinite; }
-.spark-5{ top:10%; left:78%; animation: sparkle 3.8s 1.8s ease-in-out infinite; }
-.spark-6{ top:28%; left:90%; animation: sparkle 4.2s 0.9s ease-in-out infinite; }
-.spark-7{ top:40%; left:15%; animation: sparkle 3.4s 2.1s ease-in-out infinite; }
-.spark-8{ top:55%; left:35%; animation: sparkle 4.6s 1.5s ease-in-out infinite; }
-.spark-9{ top:48%; left:55%; animation: sparkle 3.9s 0.4s ease-in-out infinite; }
-.spark-10{ top:42%; left:72%; animation: sparkle 4.1s 2.4s ease-in-out infinite; }
-.spark-11{ top:60%; left:88%; animation: sparkle 3.5s 1.0s ease-in-out infinite; }
-.spark-12{ top:65%; left:20%; animation: sparkle 4.3s 1.7s ease-in-out infinite; }
-.spark-13{ top:72%; left:45%; animation: sparkle 3.7s 2.8s ease-in-out infinite; }
-.spark-14{ top:68%; left:65%; animation: sparkle 4.5s 0.7s ease-in-out infinite; }
-.spark-15{ top:78%; left:82%; animation: sparkle 3.3s 2.0s ease-in-out infinite; }
-.spark-16{ top:35%; left:48%; animation: sparkle 4.8s 1.3s ease-in-out infinite; }
-.spark-17{ top:15%; left:52%; animation: sparkle 3.1s 2.6s ease-in-out infinite; }
-.spark-18{ top:82%; left:10%; animation: sparkle 4.0s 0.2s ease-in-out infinite; }
-.spark-19{ top:50%; left:5%;  animation: sparkle 3.6s 1.9s ease-in-out infinite; }
-.spark-20{ top:85%; left:58%; animation: sparkle 4.7s 2.3s ease-in-out infinite; }
+.spark-2{ top:8%;  left:42%; animation: sparkle 3.6s 1.2s ease-in-out infinite; }
+.spark-3{ top:10%; left:78%; animation: sparkle 3.8s 1.8s ease-in-out infinite; }
+.spark-4{ top:40%; left:15%; animation: sparkle 3.4s 2.1s ease-in-out infinite; }
+.spark-5{ top:48%; left:55%; animation: sparkle 3.9s 0.4s ease-in-out infinite; }
+.spark-6{ top:60%; left:88%; animation: sparkle 3.5s 1.0s ease-in-out infinite; }
+.spark-7{ top:72%; left:45%; animation: sparkle 3.7s 2.8s ease-in-out infinite; }
+.spark-8{ top:35%; left:48%; animation: sparkle 4.8s 1.3s ease-in-out infinite; }
+.spark-9{ top:82%; left:10%; animation: sparkle 4.0s 0.2s ease-in-out infinite; }
+.spark-10{ top:85%; left:58%; animation: sparkle 4.7s 2.3s ease-in-out infinite; }
 
 @keyframes twinkle1{
   0%, 100% { opacity: 0.35; transform: translate3d(0,0,0); }
@@ -1128,16 +1110,6 @@ def main():
         '<div class="spark spark-8"></div>'
         '<div class="spark spark-9"></div>'
         '<div class="spark spark-10"></div>'
-        '<div class="spark spark-11"></div>'
-        '<div class="spark spark-12"></div>'
-        '<div class="spark spark-13"></div>'
-        '<div class="spark spark-14"></div>'
-        '<div class="spark spark-15"></div>'
-        '<div class="spark spark-16"></div>'
-        '<div class="spark spark-17"></div>'
-        '<div class="spark spark-18"></div>'
-        '<div class="spark spark-19"></div>'
-        '<div class="spark spark-20"></div>'
         '<div class="hero-inner">'
         '<div class="hero-kicker">X-Ray Threat</div>'
         '<div class="hero-title"><span class="typewrite">Detector</span></div>'
