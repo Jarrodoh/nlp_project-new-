@@ -521,12 +521,109 @@ section[data-testid="stSidebar"] {
   box-shadow: 0 18px 55px rgba(0,0,0,0.35);
   margin-bottom: 1.8rem;
   animation: floatIn 700ms ease-out both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Star layers */
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  pointer-events:none;
+  z-index: 0;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  filter: blur(0.2px);
+}
+
+/* Small stars layer */
+.hero::before{
+  background:
+    radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.85), transparent 60%),
+    radial-gradient(1px 1px at 28% 36%, rgba(255,255,255,0.75), transparent 60%),
+    radial-gradient(1px 1px at 44% 22%, rgba(255,255,255,0.65), transparent 60%),
+    radial-gradient(1px 1px at 66% 28%, rgba(255,255,255,0.80), transparent 60%),
+    radial-gradient(1px 1px at 78% 42%, rgba(255,255,255,0.70), transparent 60%),
+    radial-gradient(1px 1px at 86% 18%, rgba(255,255,255,0.60), transparent 60%),
+    radial-gradient(1px 1px at 18% 62%, rgba(255,255,255,0.70), transparent 60%),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.60), transparent 60%),
+    radial-gradient(1px 1px at 58% 76%, rgba(255,255,255,0.78), transparent 60%),
+    radial-gradient(1px 1px at 74% 64%, rgba(255,255,255,0.62), transparent 60%),
+    radial-gradient(1px 1px at 90% 74%, rgba(255,255,255,0.72), transparent 60%);
+  animation: twinkle1 3.8s ease-in-out infinite;
+}
+
+/* Bigger sparkle stars layer */
+.hero::after{
+  background:
+    radial-gradient(2px 2px at 22% 26%, rgba(255,255,255,0.75), transparent 65%),
+    radial-gradient(2px 2px at 52% 16%, rgba(255,255,255,0.65), transparent 65%),
+    radial-gradient(2px 2px at 72% 24%, rgba(255,255,255,0.70), transparent 65%),
+    radial-gradient(2px 2px at 84% 54%, rgba(255,255,255,0.60), transparent 65%),
+    radial-gradient(2px 2px at 36% 56%, rgba(255,255,255,0.62), transparent 65%),
+    radial-gradient(2px 2px at 62% 74%, rgba(255,255,255,0.68), transparent 65%);
+  opacity: 0.35;
+  animation: twinkle2 5.6s ease-in-out infinite;
+}
+
+/* Bright spark stars (diamond shaped) */
+.hero .spark{
+  position:absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+  opacity: 0;
+  pointer-events:none;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+
+.spark-1{ top:12%; left:8%;  animation: sparkle 3.2s 0.0s ease-in-out infinite; }
+.spark-2{ top:22%; left:25%; animation: sparkle 4.0s 0.6s ease-in-out infinite; }
+.spark-3{ top:8%;  left:42%; animation: sparkle 3.6s 1.2s ease-in-out infinite; }
+.spark-4{ top:18%; left:60%; animation: sparkle 4.4s 0.3s ease-in-out infinite; }
+.spark-5{ top:10%; left:78%; animation: sparkle 3.8s 1.8s ease-in-out infinite; }
+.spark-6{ top:28%; left:90%; animation: sparkle 4.2s 0.9s ease-in-out infinite; }
+.spark-7{ top:40%; left:15%; animation: sparkle 3.4s 2.1s ease-in-out infinite; }
+.spark-8{ top:55%; left:35%; animation: sparkle 4.6s 1.5s ease-in-out infinite; }
+.spark-9{ top:48%; left:55%; animation: sparkle 3.9s 0.4s ease-in-out infinite; }
+.spark-10{ top:42%; left:72%; animation: sparkle 4.1s 2.4s ease-in-out infinite; }
+.spark-11{ top:60%; left:88%; animation: sparkle 3.5s 1.0s ease-in-out infinite; }
+.spark-12{ top:65%; left:20%; animation: sparkle 4.3s 1.7s ease-in-out infinite; }
+.spark-13{ top:72%; left:45%; animation: sparkle 3.7s 2.8s ease-in-out infinite; }
+.spark-14{ top:68%; left:65%; animation: sparkle 4.5s 0.7s ease-in-out infinite; }
+.spark-15{ top:78%; left:82%; animation: sparkle 3.3s 2.0s ease-in-out infinite; }
+.spark-16{ top:35%; left:48%; animation: sparkle 4.8s 1.3s ease-in-out infinite; }
+.spark-17{ top:15%; left:52%; animation: sparkle 3.1s 2.6s ease-in-out infinite; }
+.spark-18{ top:82%; left:10%; animation: sparkle 4.0s 0.2s ease-in-out infinite; }
+.spark-19{ top:50%; left:5%;  animation: sparkle 3.6s 1.9s ease-in-out infinite; }
+.spark-20{ top:85%; left:58%; animation: sparkle 4.7s 2.3s ease-in-out infinite; }
+
+@keyframes twinkle1{
+  0%, 100% { opacity: 0.35; transform: translate3d(0,0,0); }
+  50%      { opacity: 0.70; transform: translate3d(-0.6%, 0.4%, 0); }
+}
+
+@keyframes twinkle2{
+  0%, 100% { opacity: 0.20; transform: translate3d(0,0,0) scale(1); }
+  50%      { opacity: 0.55; transform: translate3d(0.7%, -0.4%, 0) scale(1.01); }
+}
+
+@keyframes sparkle{
+  0%, 65%, 100% { opacity: 0; transform: scale(0.6); }
+  72%           { opacity: 1; transform: scale(1.0); }
+  80%           { opacity: 0.2; transform: scale(1.6); }
 }
 
 .hero-inner{
   text-align: center;
   max-width: 820px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-kicker{
@@ -1015,31 +1112,32 @@ def main():
     st.markdown(get_bg_css(), unsafe_allow_html=True)
     st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-    # Lottie background animation (subtle looping vector art)
-    st.markdown(
-        '<div id="lottie-bg" style="'
-        'position:fixed; inset:0; z-index:-3; pointer-events:none; '
-        'opacity:0.35; filter:blur(0px);'
-        '"></div>'
-        '<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>'
-        '<script>'
-        'lottie.loadAnimation({'
-        'container:document.getElementById("lottie-bg"),'
-        'renderer:"svg",'
-        'loop:true,'
-        'autoplay:true,'
-        'path:"https://assets9.lottiefiles.com/packages/lf20_jcikwtux.json"'
-        '});'
-        '</script>',
-        unsafe_allow_html=True,
-    )
-
     # Sidebar
     render_sidebar()
 
     # Header (hero section)
     st.markdown(
         '<div class="hero">'
+        '<div class="spark spark-1"></div>'
+        '<div class="spark spark-2"></div>'
+        '<div class="spark spark-3"></div>'
+        '<div class="spark spark-4"></div>'
+        '<div class="spark spark-5"></div>'
+        '<div class="spark spark-6"></div>'
+        '<div class="spark spark-7"></div>'
+        '<div class="spark spark-8"></div>'
+        '<div class="spark spark-9"></div>'
+        '<div class="spark spark-10"></div>'
+        '<div class="spark spark-11"></div>'
+        '<div class="spark spark-12"></div>'
+        '<div class="spark spark-13"></div>'
+        '<div class="spark spark-14"></div>'
+        '<div class="spark spark-15"></div>'
+        '<div class="spark spark-16"></div>'
+        '<div class="spark spark-17"></div>'
+        '<div class="spark spark-18"></div>'
+        '<div class="spark spark-19"></div>'
+        '<div class="spark spark-20"></div>'
         '<div class="hero-inner">'
         '<div class="hero-kicker">X-Ray Threat</div>'
         '<div class="hero-title"><span class="typewrite">Detector</span></div>'
